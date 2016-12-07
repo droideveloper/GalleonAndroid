@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ * Galleon Copyright (C) 2016 Fatih.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ -->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+  <LinearLayout
+      android:id="@+id/viewContent"
+      android:layout_gravity="center"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:padding="@dimen/default_margin"
+      android:layout_margin="@dimen/default_margin"
+      android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/ic_upload"
+        android:layout_gravity="center"
+        android:scaleType="fitCenter" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/txtLayoutUserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+      <android.support.design.widget.TextInputEditText
+          android:id="@+id/txtEditUserName"
+          android:imeOptions="actionNext"
+          android:hint="@string/titleUserName"
+          android:inputType="textEmailAddress"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/txtLayoutPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+      <android.support.design.widget.TextInputEditText
+          android:id="@+id/txtEditPassword"
+          android:imeOptions="actionDone"
+          android:inputType="textPassword"
+          android:hint="@string/titlePassword"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <!-- RememberMe -->
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/checkRememberMe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/titleRememberMe" />
+
+    <!-- Button -->
+    <android.support.v7.widget.AppCompatButton
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/titleLoginButton" />
+
+  </LinearLayout>
+
+  <org.fs.widget.AppCompatProgressBar
+      android:id="@+id/viewProgress"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:indeterminate="true"
+      android:layout_gravity="center"
+      android:visibility="gone"
+      style="@style/Widget.AppCompat.ProgressBar" />
+
+
+</FrameLayout>

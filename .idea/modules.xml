@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Galleon_Workplace.iml" filepath="$PROJECT_DIR$/Galleon_Workplace.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leptonica/leptonica.iml" filepath="$PROJECT_DIR$/leptonica/leptonica.iml" />
+      <module fileurl="file://$PROJECT_DIR$/viewpdf/viewpdf.iml" filepath="$PROJECT_DIR$/viewpdf/viewpdf.iml" />
+    </modules>
+  </component>
+</project>

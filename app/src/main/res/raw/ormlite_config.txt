@@ -1,0 +1,35 @@
+#
+# generated on 2016/09/23 06:52:29
+#
+# --table-start--
+dataClass=org.fs.galleon.entities.Syncable
+tableName=Syncables
+# --table-fields-start--
+# --field-start--
+fieldName=syncableId
+columnName=SyncableID
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=remoteId
+columnName=RemoteID
+unique=true
+# --field-end--
+# --field-start--
+fieldName=fileName
+columnName=FileName
+canBeNull=false
+# --field-end--
+# --field-start--
+fieldName=localPath
+columnName=LocalPath
+canBeNull=false
+# --field-end--
+# --field-start--
+fieldName=lastModifiedTime
+columnName=LastModifiedTime
+canBeNull=false
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################

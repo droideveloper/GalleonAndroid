@@ -1,0 +1,71 @@
+apply plugin: 'com.android.application'
+
+android {
+  compileSdkVersion 25
+  buildToolsVersion "25.0.1"
+
+  defaultConfig {
+    applicationId "org.fs.galleon"
+    minSdkVersion 14
+    targetSdkVersion 25
+    versionCode 1
+    versionName "1.0"
+    jackOptions {
+      enabled true
+    }
+  }
+
+  lintOptions {
+    abortOnError false
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+
+  splits {
+    abi {
+      enable true
+      reset()
+      include "x86", "armeabi-v7a", "armeabi", "mips"
+      universalApk false
+    }
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+}
+
+ext.versionCodes = [armeabi:3, 'armeabi-v7a':2, x86:1, mips:4]
+
+android.applicationVariants.all { variant ->
+  // assign different version code for each output
+  variant.outputs.each { output ->
+    output.versionCodeOverride =
+        project.ext.versionCodes.get(output.getFilter(com.android.build.OutputFile.ABI)) * 100 + android.defaultConfig.versionCode
+  }
+}
+
+dependencies {
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+  testCompile 'junit:junit:4.12'
+  compile 'com.android.support:appcompat-v7:25.0.1'
+  compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
+  compile 'com.jakewharton.rxbinding:rxbinding-appcompat-v7:0.4.0'
+  compile 'com.jakewharton.rxbinding:rxbinding-recyclerview-v7:0.4.0'
+
+
+  compile project(":core")
+  compile project(":viewpdf")
+  compile project(":leptonica")
+  //compile 'com.github.barteksc:android-pdf-viewer:2.1.0' excluded because this thing has so many leaks!!
+  compile 'net.sourceforge.streamsupport:streamsupport:1.5.1'
+
+  compile 'com.google.dagger:dagger:2.6'
+  annotationProcessor 'com.google.dagger:dagger-compiler:2.6'
+}
